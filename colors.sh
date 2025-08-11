@@ -1,0 +1,6 @@
+# colors
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+LIGHT_BLUE='\033[1;34m'
+LIGHT_GRAY='\033[1;36m'
+DARK_GRAY='\033[0;36m'
