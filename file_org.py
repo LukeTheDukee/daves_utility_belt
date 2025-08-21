@@ -22,6 +22,7 @@ def organize_and_sort_files(directory):
 
     logging.info("Starting file organization...")
 
+    # By no means an exhaustive list, but a good start.
     extensions = {
         "Images": [".jpg", ".jpeg", ".png", ".gif"],
         "Documents": [".pdf", ".docx", ".txt"],
@@ -40,19 +41,21 @@ def organize_and_sort_files(directory):
     for folder in extensions.keys():
         current_check = logger_setup.home_directory / folder
         if not current_check.exists():
-            logging.error(f"Directory {current_check} does not exist. Will be created.")
+            logging.error(
+                f"Directory {current_check} does not exist. Will be created.")
             current_check.mkdir(parents=True, exist_ok=True)
 
     # Move files to their respective directories.
-
     for dir_type, extension in extensions.items():
         for ext in extension:
-            items = Path(directory).glob(f"*{ext}")
+            items = Path(directory).glob(
+                f"*{ext}"
+            )  # Create a iterable of files with the current extension
 
-            if not items:  # If list is empty, skip to next extension
+            if not items:  # If iterable is empty, skip to next extension
                 continue
 
-            for item in items:  # Move each item to the appropriate directory
+            for item in items:  # Move each file to the appropriate directory
                 destination = logger_setup.home_directory / dir_type / item.name
                 logging.info(f"Moving {item} to {destination}")
 
@@ -72,7 +75,8 @@ if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser(
         description="Organize and sort files in a directory."
     )
-    arg_parser.add_argument("directory", type=str, help="The directory to organize.")
+    arg_parser.add_argument("directory", type=str,
+                            help="The directory to organize.")
     args = arg_parser.parse_args()
 
     organize_and_sort_files(args.directory)
