@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import argparse
 import logging
@@ -37,8 +39,7 @@ def organize_and_sort_files(directory):
     for folder in extensions.keys():
         current_check = home_directory / folder
         if not current_check.exists():
-            logging.error(
-                f"Directory {current_check} does not exist. Will be created.")
+            logging.error(f"Directory {current_check} does not exist. Will be created.")
             current_check.mkdir(parents=True, exist_ok=True)
 
     # Move files to their respective directories.
@@ -70,8 +71,7 @@ if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser(
         description="Organize and sort files in a directory."
     )
-    arg_parser.add_argument("directory", type=str,
-                            help="The directory to organize.")
+    arg_parser.add_argument("directory", type=str, help="The directory to organize.")
     args = arg_parser.parse_args()
 
     organize_and_sort_files(args.directory)
