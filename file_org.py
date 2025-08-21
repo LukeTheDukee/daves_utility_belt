@@ -4,27 +4,8 @@ import os
 import argparse
 import logging
 from pathlib import Path
-
-# Get logging going.
-
-home_directory = Path.home()  # home dir of user; platform independent
-log_directory = home_directory / ".util_log"  # log directory in home
-home_log_path = log_directory / "file_org.log"  # Define log file path
-
-if not log_directory.exists():  # Check if log directory exists
-    log_directory.mkdir(parents=True, exist_ok=True)  # Create it if not
-
-
-# Set up basic logging configuration
-logging.basicConfig(
-    level=logging.INFO,
-    filename=str(home_log_path),
-    # Include date and time
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    datefmt="%Y-%m-%d_%H-%M-%S",  # Specify the date and time format
-)
-
-logging.info("Starting file organization script.")
+from logger_setup import setup_logging
+import logger_setup
 
 
 def organize_and_sort_files(directory):
@@ -35,6 +16,11 @@ def organize_and_sort_files(directory):
     Parameters:
     directory (str): The path to the directory to organize.
     """
+    # Get logging setup going.
+
+    setup_logging()
+
+    logging.info("Starting file organization...")
 
     extensions = {
         "Images": [".jpg", ".jpeg", ".png", ".gif"],
@@ -52,7 +38,7 @@ def organize_and_sort_files(directory):
 
     # Loop to check if the directories exist in home, if not create them.
     for folder in extensions.keys():
-        current_check = home_directory / folder
+        current_check = logger_setup.home_directory / folder
         if not current_check.exists():
             logging.error(f"Directory {current_check} does not exist. Will be created.")
             current_check.mkdir(parents=True, exist_ok=True)
@@ -67,7 +53,7 @@ def organize_and_sort_files(directory):
                 continue
 
             for item in items:  # Move each item to the appropriate directory
-                destination = home_directory / dir_type / item.name
+                destination = logger_setup.home_directory / dir_type / item.name
                 logging.info(f"Moving {item} to {destination}")
 
                 try:
