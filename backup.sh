@@ -9,7 +9,7 @@ if ! [[ -f $HOME/.util_log/backup.log ]]; then # Check if the log file and direc
   touch "$HOME/.util_log/backup.log"
 fi
 
-log_file="$HOME/log/backup.log"
+log_file="$HOME/.util_log/backup.log"
 first=$(date +"%Y-%m-%d_%H-%M-%S") # Get the current date and time
 
 log() { # Super duper complicated logging function
