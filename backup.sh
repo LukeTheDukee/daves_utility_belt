@@ -4,13 +4,13 @@
 
 # Prepare logger.
 
-if ! [[ -f $HOME/log/backup.log ]]; then # Check if the log file and directory exist
-  mkdir -p "$HOME/log"
-  touch "$HOME/log/backup.log"
+if ! [[ -f $HOME/.util_log/backup.log ]]; then # Check if the log file and directory exist
+  mkdir -p "$HOME/.util_log"
+  touch "$HOME/.util_log/backup.log"
 fi
 
 log_file="$HOME/log/backup.log"
-first=$(date +"%d-%m-%Y_%H-%M-%S") # Get the current date and time
+first=$(date +"%Y-%m-%d_%H-%M-%S") # Get the current date and time
 
 log() { # Super duper complicated logging function
   local message="$1"
