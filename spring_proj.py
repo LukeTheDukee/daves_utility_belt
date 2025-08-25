@@ -3,8 +3,8 @@
 import os
 
 """
-A simple script to setup a directory structure for a development project.
-It creates the following structure:
+A simple script to setup a springboot directory structure for a
+development project. It creates the following structure:
 
 project/
     src/
@@ -53,4 +53,4 @@ for file_path, content in files:
     with open(file_path, "w") as f:
         f.write(content)
 
-print("\nProject structure created successfully.")
+print("\nSpringboot project structure created successfully.")
