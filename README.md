@@ -1,11 +1,9 @@
 # Dave's Utility Belt
 A couple of small utility scripts for a CLI based workflow.
 
-The Utility Belt is a compilation of several scripts, with the capability to backup, organize and create files and folders. Additionally there are a couple of small goodies like a weather script. All scripts are designed with a CLI workflow in mind.
+The Utility Belt is a compilation of several scripts, with the capability to backup, organize and create files and folders. Additionally there are a couple of small goodies like a weather script. All scripts are specifically for the use with a shell.
 
 ## Backup Script
-
--------------------------------------------------
 
 This Bash script automates the process of creating and managing backups of the current directory. It allows users to create new backups or replace existing ones, based on their preferences. The script also includes logging functionality to track backup operations.
 
@@ -27,8 +25,6 @@ The script first checks and if necessary creates a backup directory at `$HOME/.b
 
 ## Colors
 
---------------------------------------------------
-
 Modular script to reuse colors among all bash scripts. Enhances user expierence among all outputs of the bash scripts.
 
 ### Colors
@@ -39,8 +35,6 @@ Modular script to reuse colors among all bash scripts. Enhances user expierence 
 - Drak Gray
 
 ## Logger Setup
-
--------------------------------------
 
 The logger setup script provides a standardized logging configuration for utility scripts. It creates a dedicated log directory and log file to record events, making it easier to track the execution and any issues that may arise.
 
