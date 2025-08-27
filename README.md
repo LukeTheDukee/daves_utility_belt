@@ -27,12 +27,9 @@ The script first checks and if necessary creates a backup directory at `$HOME/.b
 
 Modular script to reuse colors among all bash scripts. Enhances user expierence among all outputs of the bash scripts.
 
-### Colors
+### Requirements
 
-- Red
-- Light Blue
-- Light Gray
-- Drak Gray
+A terminal emulator which is able to display colors. (e. g. Kitty)
 
 ## Logger Setup Script
 
