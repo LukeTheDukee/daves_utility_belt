@@ -104,9 +104,21 @@ The script organizes files into the following directory structure within the use
 - Python 3.x
 - Required permissions to create directories and files in the specified location.
 
+## Weather Information Script
 
+This script retrieves and displays current weather data for a specified city using the OpenWeatherMap API. Users can input the city name and country code to get real-time weather information.
 
+### Features
 
+- Fetches weather data from the OpenWeatherMap API
+- Displays city name, temperature, humidity, and weather description
+- Reads the API key from a configuration file for secure access
+
+### Requirements
+
+- Python 3.x
+- `requests` library (install via `pip install requests`)
+- An OpenWeatherMap API key (sign up at [OpenWeatherMap](https://openweathermap.org/) to get your API key).
 
 
 
