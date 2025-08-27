@@ -18,7 +18,8 @@ def project_name_setup():
     try:
         os.makedirs(project_name)
         os.chdir(project_name)
-        print(f"Project directory '{project_name}' created and switched to it.")
+        print(f"Project directory '{
+              project_name}' created and switched to it.")
     except Exception as e:
         print(f"Error creating project directory: {e}")
         exit(1)
@@ -110,7 +111,8 @@ project/
 def setup_go_structure():
     project_name_setup()
 
-    folders = ["cmd/myapp", "pkg", "internal", "api", "configs", "scripts", "tests"]
+    folders = ["cmd/myapp", "pkg", "internal",
+               "api", "configs", "scripts", "tests"]
 
     files = [
         (
@@ -164,7 +166,8 @@ def setup_python_structure():
 
 
 if __name__ == "__main__":
-    choice = input("Choose project type (springboot/go/python): ").strip().lower()
+    choice = input(
+        "Choose project type (springboot/go/python): ").strip().lower()
 
     match choice:
         case "springboot":
