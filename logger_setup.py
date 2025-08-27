@@ -12,6 +12,7 @@ Unused  at the moment but will be used later.
 """
 
 
+# Not yet used, but will be used later once Logger is more complex
 class SeparatorLine(logging.Handler):
     def __init__(self, log_file):
         super().__init__()
@@ -41,6 +42,10 @@ def setup_logging():
         # Include date and time
         format="%(asctime)s - %(levelname)s - %(message)s",
         datefmt="%Y-%m-%d_%H-%M-%S",  # Specify the date and time format
+        handlers=[
+            logging.FileHandler(str(home_log_path)),  # Stream log to file
+            logging.StreamHandler(),  # Stream log to STDOUT as well
+        ],
     )
 
     with open(home_log_path, "a") as f:
