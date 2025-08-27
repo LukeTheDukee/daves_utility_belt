@@ -1,7 +1,7 @@
 # Dave's Utility Belt
 A couple of small utility scripts for a CLI based workflow.
 
-The Utility Belt is a compilation of several scripts, with the capability to backup, organize and create files and folders. Additionally there are a couple of small goodies like a weather script. All scripts are specifically for the use with a shell.
+The Utility Belt is a compilation of several scripts, with the capability to backup, organize and create files and folders. Additionally there are a couple of small goodies like a weather script. All scripts are specifically for the use with Bash.
 
 ## Backup Script
 
