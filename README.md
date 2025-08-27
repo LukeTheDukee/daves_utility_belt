@@ -23,7 +23,7 @@ The script first checks and if necessary creates a backup directory at `$HOME/.b
 - Bash Shell
 - tar
 
-## Colors
+## Colors Script
 
 Modular script to reuse colors among all bash scripts. Enhances user expierence among all outputs of the bash scripts.
 
@@ -34,7 +34,7 @@ Modular script to reuse colors among all bash scripts. Enhances user expierence 
 - LIght Gray
 - Drak Gray
 
-## Logger Setup
+## Logger Setup Script
 
 The logger setup script provides a standardized logging configuration for utility scripts. It creates a dedicated log directory and log file to record events, making it easier to track the execution and any issues that may arise.
 
@@ -52,6 +52,63 @@ To use the logger setup in your scripts, simply import the `logger_setup` module
 ### Structure
 
 Logs are stored in the user's home directory under `.util_log/file_org.log`. You can change the log file path by modifying the `home_log_path` variable in the `logger_setup.py` script.
+
+## Project Setup Script
+
+This script automates the creation of project directory structures for various programming languages, including Spring Boot (Java), Go, and Python. It sets up a standardized layout that is commonly used in development projects, making it easier to get started with new applications.
+
+### Features
+
+- **Spring Boot**: Creates a directory structure suitable for Java Spring Boot applications.
+- **Go**: Sets up a standard Go project layout.
+- **Python**: Initializes a Python project with a typical structure.
+
+### Requirements
+
+- Python 3.x
+- Required permissions to create directories and files in the specified location.
+
+## File Organizer Script
+
+This Python script organizes and sorts files in a specified directory based on their file types. It categorizes files into predefined folders such as Images, Documents, Videos, and Music, making it easier to manage and locate files.
+
+### Features
+
+- Automatically organizes files into designated folders based on file extensions.
+- Supports common file types for images, documents, videos, and music.
+- Platform-independent, tested primarily on Linux.
+
+### Directory Structure
+
+The script organizes files into the following directory structure within the user's `home`directory:\
+
+`Images `
+
+`Documents`
+
+`Videos`
+
+`Music`
+
+ If the directories do not exist there will be created within the `home` directory of the user. File types can easily extended.
+
+### Supported File Types
+
+-  **Images**: `.jpg`, `.jpeg`, `.png`, `.gif`
+- **Documents**: `.pdf`, `.docx`, `.txt`
+- **Videos**: `.mp4`, `.mkv`
+- **Music**: `.mp3`, `.wav`
+
+### Requirements
+
+- Python 3.x
+- Required permissions to create directories and files in the specified location.
+
+
+
+
+
+
 
 
 
