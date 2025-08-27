@@ -3,7 +3,9 @@
 import os
 
 # Setup project name and create the main project directory
-def proj_setup():
+
+
+def project_name_setup():
     project_name = input("Enter the project name: ")
     if not project_name:
         print("Project name cannot be empty.")
@@ -14,12 +16,12 @@ def proj_setup():
         return
 
     try:
-      os.makedirs(project_name)
-      os.chdir(project_name)
-      print(f"Project directory '{project_name}' created and switched to it.")
+        os.makedirs(project_name)
+        os.chdir(project_name)
+        print(f"Project directory '{project_name}' created and switched to it.")
     except Exception as e:
-      print(f"Error creating project directory: {e}")
-      exit(1)
+        print(f"Error creating project directory: {e}")
+        exit(1)
 
 
 def create_file_folders(folders, files):
@@ -159,3 +161,17 @@ def setup_python_structure():
     ]
 
     create_file_folders(folders, files)
+
+
+if __name__ == "__main__":
+    choice = input("Choose project type (springboot/go/python): ").strip().lower()
+
+    match choice:
+        case "springboot":
+            setup_springboot_structure()
+        case "go":
+            setup_go_structure()
+        case "python":
+            setup_python_structure()
+        case _:
+            print("Invalid choice. Please choose 'springboot', 'go', or 'python'.")
