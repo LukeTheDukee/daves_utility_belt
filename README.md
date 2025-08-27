@@ -31,7 +31,7 @@ Modular script to reuse colors among all bash scripts. Enhances user expierence 
 
 - Red
 - Light Blue
-- LIght Gray
+- Light Gray
 - Drak Gray
 
 ## Logger Setup Script
@@ -90,7 +90,7 @@ The script organizes files into the following directory structure within the use
 
 `Music`
 
- If the directories do not exist there will be created within the `home` directory of the user. File types can easily extended.
+ If the directories do not exist there will be created within the `home` directory of the user. File types can be easily extended.
 
 ### Supported File Types
 
