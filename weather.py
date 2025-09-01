@@ -6,7 +6,8 @@ import requests
 
 # Function to request weather data from OpenWeatherMap API
 def request_weather(api_key, city, country):
-    paramaters = {"q": f"{city},{country}", "appid": api_key, "units": "metric"}
+    paramaters = {"q": f"{city},{country}",
+                  "appid": api_key, "units": "metric"}
     try:  # Handle potential request errors
         response = requests.get(
             "http://api.openweathermap.org/data/2.5/weather", params=paramaters
@@ -58,7 +59,7 @@ def main():
     city = city.strip()
     country = country.strip()
     api_key = read_api_key(
-        "./config/owm_api_key.txt"
+        "config/owm_api_key.txt"
     )  # Store your API key in api_key.txt. Just the key, no extra whitespace.
 
     weahter_data = request_weather(api_key, city, country)
