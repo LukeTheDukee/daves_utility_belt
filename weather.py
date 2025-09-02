@@ -2,12 +2,12 @@
 
 import argparse
 import requests
+import os
 
 
 # Function to request weather data from OpenWeatherMap API
 def request_weather(api_key, city, country):
-    paramaters = {"q": f"{city},{country}",
-                  "appid": api_key, "units": "metric"}
+    paramaters = {"q": f"{city},{country}", "appid": api_key, "units": "metric"}
     try:  # Handle potential request errors
         response = requests.get(
             "http://api.openweathermap.org/data/2.5/weather", params=paramaters
@@ -55,12 +55,13 @@ def main():
     print(start_message)
     city = input("Please enter city code. E.g., London: ")
     country = input("Please enter country code. E.g., US for United States: ")
+    script_directory = os.path.dirname(os.path.abspath(__file__))
 
     city = city.strip()
     country = country.strip()
     api_key = read_api_key(
-        "config/owm_api_key.txt"
-    )  # Store your API key in api_key.txt. Just the key, no extra whitespace.
+        script_directory + "/config/owm_api_key.txt"
+    )  # Store API key in api_key.txt. Just the key, no extra whitespace.
 
     weahter_data = request_weather(api_key, city, country)
     display_weather(weahter_data)
